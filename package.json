@@ -6,7 +6,7 @@
   "description": "Daily horoscope API. Sign, date, overview, love, career, health, finance, lucky number, lucky color, moon phase.",
   "license": "MIT",
   "dependencies": {
-    "@roxyapi/sdk": "^1.2.23"
+    "@roxyapi/sdk": "^1.2.45"
   },
   "scripts": {
     "ts": "bun example.ts",
