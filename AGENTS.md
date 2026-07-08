@@ -6,7 +6,7 @@ This repo teaches AI coding agents (Cursor, Claude Code, Aider, Codex, Windsurf,
 - Method: `GET`
 - URL: `https://roxyapi.com/api/v2/astrology/horoscope/{sign}/daily`
 - Auth: `X-API-Key` header
-- Domain: `astrology` (one of 12 in the RoxyAPI catalog)
+- Domain: `astrology` (one of 12+ in the RoxyAPI catalog)
 - Operation ID: `getDailyHoroscope` matches the SDK method name in camelCase
 - MCP tool: `get_astrology_horoscope_sign_daily` on `https://roxyapi.com/mcp/astrology`
 
