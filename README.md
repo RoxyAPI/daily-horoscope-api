@@ -2,7 +2,7 @@
 
 # Daily Horoscope API
 
-> Daily horoscope by zodiac sign with transit-based forecasts and house activations. One key covers 12+ spiritual domains. MCP-first, no local setup required.
+> Daily horoscope by zodiac sign with transit-based forecasts and house activations. One key covers 14+ spiritual domains. MCP-first, no local setup required.
 
 [![Get API Key](https://img.shields.io/badge/Get_API_Key-RoxyAPI-14b8a6?style=for-the-badge&logo=key&logoColor=white)](https://roxyapi.com/pricing)
 [![Try Live](https://img.shields.io/badge/Try_API_Live-Free_in_browser-22c55e?style=for-the-badge&logo=swagger&logoColor=white)](https://roxyapi.com/api-reference)
@@ -12,13 +12,13 @@
 
 ## What is Daily Horoscope API
 
-The RoxyAPI daily horoscope endpoint returns a transit-based forecast for any zodiac sign with house activations unique to each sign. The forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives different content. Each call ships overview, love, career, health, finance, daily advice, lucky number, lucky color, compatible signs, active transits, Moon sign, Moon phase, and an energy rating from 1 to 10. One RoxyAPI subscription covers 12+ spiritual domains, all calculations powered by Roxy Ephemeris, verified against NASA JPL Horizons.
+The RoxyAPI daily horoscope endpoint returns a transit-based forecast for any zodiac sign with house activations unique to each sign. The forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives different content. Each call ships overview, love, career, health, finance, daily advice, lucky number, lucky color, compatible signs, active transits, Moon sign, Moon phase, and an energy rating from 1 to 10. One RoxyAPI subscription covers 14+ spiritual domains, all calculations powered by Roxy Ephemeris, verified against NASA JPL Horizons.
 
 ## Why this API
 
 | Property | Value |
 |----------|-------|
-| Coverage | 12+ spiritual domains in one subscription |
+| Coverage | 14+ spiritual domains in one subscription |
 | Calculation | Roxy Ephemeris, verified against NASA JPL Horizons |
 | MCP server | `https://roxyapi.com/mcp/astrology` (Streamable HTTP, no local setup) |
 | SDKs | TypeScript on npm `@roxyapi/sdk`, Python on PyPI `roxy-sdk`, PHP on Packagist `roxyapi/sdk`, C# on NuGet `RoxyApi.Sdk`, Go `github.com/RoxyAPI/sdk-go`, WordPress plugin `roxyapi` |
