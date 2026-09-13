@@ -57,12 +57,12 @@ horoscope = roxy.astrology.get_daily_horoscope(sign="aries")
 
 print(horoscope["sign"])           # Aries
 print(horoscope["date"])           # 2026-05-07
-print(horoscope["overview"])       # Saturn in Aries demands focus and discipline...
+print(horoscope["overview"])       # The Moon highlights your tenth house of career...
 print(horoscope["love"])           # Venus in your third house makes your words sweet...
-print(horoscope["luckyNumber"])    # 20
+print(horoscope["luckyNumber"])    # 9
 print(horoscope["luckyColor"])     # Red
 print(horoscope["moonPhase"])      # Waning Gibbous Moon
-print(horoscope["energyRating"])   # 7
+print(horoscope["energyRating"])   # 4
 ```
 
 ### JavaScript (Node)
@@ -84,10 +84,10 @@ console.log('Date:', data.date);                    // 2026-05-07
 console.log('Overview:', data.overview);
 console.log('Love:', data.love);
 console.log('Career:', data.career);
-console.log('Lucky number:', data.luckyNumber);     // 20
+console.log('Lucky number:', data.luckyNumber);     // 9
 console.log('Lucky color:', data.luckyColor);       // Red
 console.log('Moon phase:', data.moonPhase);         // Waning Gibbous Moon
-console.log('Energy rating:', data.energyRating);   // 7 / 10
+console.log('Energy rating:', data.energyRating);   // 4 / 10
 ```
 
 ### TypeScript
@@ -97,7 +97,7 @@ import { createRoxy } from '@roxyapi/sdk';
 
 const roxy = createRoxy(process.env.ROXY_API_KEY!);
 
-// Daily horoscope: returns sign, date, overview, love, career, health, finance, lucky fields, transits, moon data
+// Daily horoscope: returns sign, date, the six sections, a long-form column, the dated events behind it, lucky fields, transits, moon data
 const { data, error } = await roxy.astrology.getDailyHoroscope({
   path: { sign: 'aries' },
 });
@@ -128,23 +128,33 @@ console.log('Energy rating:', data.energyRating, '/ 10');
 {
   "sign": "Aries",
   "date": "2026-05-07",
-  "overview": "Saturn in Aries demands focus and discipline today. The effort you invest now builds something that endures.",
-  "love": "Venus in your third house makes your words sweet and persuasive. Flirtatious conversations and heartfelt messages hit their mark.",
-  "career": "Take responsibility seriously at work. Hard work brings lasting results, even when progress feels invisible.",
-  "health": "Energy levels peak today. Great for physical activities, bold action, and breaking through inertia.",
-  "finance": "Jupiter in your fourth house favors real estate, home investments, and family-related finances.",
-  "advice": "Mercury in your second house sharpens financial thinking. Review budgets, negotiate deals, and research purchases.",
-  "luckyNumber": 20,
+  "overview": "The Moon highlights your tenth house of career and public reputation. Professional matters and long-term ambitions are emotionally charged today. Your public image matters more than usual. No single event is running this, so the shape of it comes from what was already in motion.",
+  "love": "Venus in your third house makes your words sweet and persuasive. Flirtatious conversations and heartfelt messages hit their mark. Express affection through thoughtful communication. Attention is the only variable left when nothing external is stirring the situation.",
+  "career": "Mars energizes your first house, fueling personal drive and initiative. You come across as bold and decisive in every interaction. Take the lead on projects that require courage. Nothing is forcing a move at work, which makes this a good stretch for the work nobody is watching.",
+  "health": "The Sun in your second house connects wellbeing with comfort and stability. Nourishing food, steady routines, and sensory pleasures support your health. Ground yourself in what feels good. Minor repairs are cheapest before anything makes them urgent.",
+  "finance": "Jupiter in your fourth house favors real estate, home investments, and family-related finances. Property matters carry extra luck. Spending on your living space pays dividends in comfort. Anything on autopilot keeps running, and autopilot is where the waste usually sits.",
+  "advice": "Mercury in your second house sharpens financial thinking. Review budgets, negotiate deals, and research purchases. Your mind is tuned to value and practical matters today. Decisions are not being asked for, which makes it a good moment to finish one already made.",
+  "column": "The sky is quiet enough that nothing outside is setting the terms. Among the things that simply are, Mars in Aries puts effort, appetite, conflict, and whatever has to be pushed inside your first house of identity and self-expression. Your fourth house carries Jupiter in Cancer, and the household sits, along with everything it inherited from before. Underlying all of it, the Moon is in Capricorn and your tenth house of career and public image carries it, over mood, habit, the household, and what counts as comfort. Position before motion: Pluto stands in Aquarius and your eleventh house answers for it, since a wider circle decides what is possible, and the plan runs past the immediate. Use a quiet stretch on the thing that never gets done when something louder is available.",
+  "events": [],
+  "luckyNumber": 9,
   "luckyColor": "Red",
-  "compatibleSigns": ["Leo", "Sagittarius", "Gemini"],
+  "compatibleSigns": [
+    "Leo",
+    "Sagittarius",
+    "Gemini"
+  ],
   "activeTransits": [
-    "Saturn in Aries (1st house of identity and self-expression)",
+    "Sun in Taurus (2nd house of finances and personal values)",
+    "Moon in Capricorn (10th house of career and public image)",
+    "Mercury in Taurus (2nd house of finances and personal values)",
+    "Venus in Gemini (3rd house of communication and learning)",
     "Mars in Aries (1st house of identity and self-expression)",
-    "Venus in Gemini (3rd house of communication and learning)"
+    "Jupiter in Cancer (4th house of home and emotional foundations)",
+    "Saturn in Aries (1st house of identity and self-expression)"
   ],
   "moonSign": "Capricorn",
   "moonPhase": "Waning Gibbous Moon",
-  "energyRating": 7
+  "energyRating": 4
 }
 ```
 
@@ -158,13 +168,15 @@ console.log('Energy rating:', data.energyRating, '/ 10');
 | `health` | string | Health, energy, and wellness guidance for the day. |
 | `finance` | string | Financial outlook and money-related guidance. |
 | `advice` | string | Actionable daily advice based on the dominant transit energy. |
-| `luckyNumber` | number | Lucky number for the day. |
+| `luckyNumber` | number | Lucky number for the day, 1 to 9, from the classical numbering of the sign ruling planet. |
 | `luckyColor` | string | Lucky color for the day, derived from the sign element. |
 | `compatibleSigns` | array | Most compatible zodiac signs. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards. |
 | `activeTransits` | array | Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign. |
 | `moonSign` | string | Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs. |
 | `moonPhase` | string | Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent). |
-| `energyRating` | number | Overall energy intensity for this sign today (1-10). Higher when more transits activate this sign directly. Useful for content widgets and visual indicators. |
+| `energyRating` | number | Overall energy intensity for this sign today (1-10), from the density and nature of the aspects standing over the sign, weighted by the houses they fall in for it. Harmonious aspects lift it and hard ones weigh on it, so a busy but difficult day does not score high on its own. Useful for content widgets and visual indicators. |
+| `column` | string | The whole reading as one continuous piece of long-form prose, for a layout that wants a single paragraph rather than six labelled ones. |
+| `events` | array | The dated astronomical events the reading is built on, each with the bodies involved, the exact instant it perfects, the house it falls in for this sign, and how long it holds. Lets an editor check any sentence against the sky. |
 
 ## Common use cases
 
