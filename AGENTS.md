@@ -49,6 +49,11 @@ Note: the daily horoscope endpoint does NOT require coordinates. Pass `sign` onl
 - `luckyNumber`: lucky number for the day (number)
 - `luckyColor`: lucky color for the day, derived from the sign element
 - `compatibleSigns`: array of most compatible zodiac signs (trine partners then a sextile partner)
+- `column`: the whole reading as one continuous piece of long-form prose
+- `focus`: topic the reading is mainly about (love, career, finance, health, overview)
+- `events`: dated astronomical events behind the reading, each with `type`, `at`, `bodies`, `placements`, `house`, and `aspect`, `phase`, `kind` or `direction` by type
+- `positions`: one row per body (Sun to Pluto) with `sign`, `house`, `isRetrograde`, `dignity`, `enteredAt`, `leavesAt`
+- `crystal`: crystal of the day for this sign (`id`, `name`)
 - `activeTransits`: array of active planetary transits with house activations relative to the queried sign
 - `moonSign`: current Moon sign, changes every 2-3 days
 - `moonPhase`: current lunar phase string
@@ -68,7 +73,7 @@ Note: the daily horoscope endpoint does NOT require coordinates. Pass `sign` onl
 - `GET /astrology/moon-phase/current` (`getCurrentMoonPhase`): current lunar phase, illumination, age, and upcoming phases
 
 ## Verified
-2026-Q2 against `https://roxyapi.com/api/v2/openapi.json`. Re-fetch the spec for ground truth before changing this file.
+Checked against `https://roxyapi.com/api/v2/openapi.json`. Re-fetch the spec for ground truth before changing this file.
 
 ## Discovery
 - Full catalog: https://roxyapi.com/AGENTS.md

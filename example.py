@@ -1,6 +1,6 @@
 """
 Daily horoscope by zodiac sign: transit-based forecast with house activations unique per sign.
-Returns overview, love, career, health, finance, lucky fields, active transits, moon data, energy rating.
+Returns overview, love, career, health, finance, a long-form column, focus, dated events, body positions, crystal, lucky fields, active transits, moon data, energy rating.
 Part of the RoxyAPI Western astrology domain.
 """
 

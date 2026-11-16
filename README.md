@@ -176,7 +176,10 @@ console.log('Energy rating:', data.energyRating, '/ 10');
 | `moonPhase` | string | Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent). |
 | `energyRating` | number | Overall energy intensity for this sign today (1-10), from the density and nature of the aspects standing over the sign, weighted by the houses they fall in for it. Harmonious aspects lift it and hard ones weigh on it, so a busy but difficult day does not score high on its own. Useful for content widgets and visual indicators. |
 | `column` | string | The whole reading as one continuous piece of long-form prose, for a layout that wants a single paragraph rather than six labelled ones. |
-| `events` | array | The dated astronomical events the reading is built on, each with the bodies involved, the exact instant it perfects, the house it falls in for this sign, and how long it holds. Lets an editor check any sentence against the sky. |
+| `focus` | string | The topic the reading is mainly about: `love`, `career`, `finance`, `health`, or `overview`. Route your own content on it. |
+| `events` | array | The dated astronomical events the reading is built on, earliest first. Each row carries `type`, `at`, `bodies`, `placements` (sign and house per body), the `house` it falls in for this sign, `through` where it holds a window, and `aspect`, `phase`, `kind` (eclipse class) or `direction` (retrograde or direct) by type. Lets an editor check any sentence against the sky. |
+| `positions` | array | One row per body (Sun to Pluto) with `sign`, `house`, `isRetrograde`, `dignity` and the instants it enters, leaves and turns direct, so every standing claim in the prose can be checked. |
+| `crystal` | object | Crystal of the day for this sign, `id` and `name`, rotating by date. |
 
 ## Common use cases
 
